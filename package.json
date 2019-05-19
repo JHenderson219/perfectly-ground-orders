@@ -1,0 +1,16 @@
+{
+  "name": "perfectly-ground-orders",
+  "version": "1.0.0",
+  "repository": "https://github.com/JHenderson219/perfectly-ground-orders.git",
+  "author": "Jordan Henderson <hendersonj219@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "setup": "yarn && cd server && yarn && cd ../client && yarn && cd../",
+    "client": "cd client && yarn start",
+    "server": "cd server && nodemon index.js --exec ./node_modules/.bin/babel-node --presets babel-preset-env",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
+}

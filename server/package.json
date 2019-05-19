@@ -1,0 +1,25 @@
+{
+  "name": "perfectly-ground-orders-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "apollo-server-express": "^2.5.0",
+    "body-parser": "^1.18.3",
+    "dotenv": "^8.0.0",
+    "express": "^4.16.4",
+    "graphql": "^14.3.0",
+    "graphql-tag": "^2.10.1",
+    "pg": "^7.11.0",
+    "sequelize": "^5.8.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "concurrently": "^4.0.1",
+    "nodemon": "^1.19.0",
+    "react-test-renderer": "^16.8.6"
+  }
+}
