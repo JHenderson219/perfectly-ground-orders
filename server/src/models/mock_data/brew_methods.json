@@ -1,0 +1,22 @@
+[
+    {
+      "id": "036b794b-7ce0-40ed-aa68-46082a8abba9",
+      "name": "Aeropress"
+    },
+    {
+      "id": "9aeadf59-8a73-47d1-81fd-11e057ee2072",
+      "name": "Coffee Maker"
+    },
+    {
+      "id": "c9dc187b-f7ab-4f44-8bd5-d1efd4ed724a",
+      "name": "Cold Brew"
+    },
+    {
+      "id": "739f377d-8f24-4804-a6e3-68e0efa6c7ff",
+      "name": "French Press"
+    },
+    {
+      "id": "c34d33c5-698b-455c-84cf-1cefdd5059a0",
+      "name": "Pour Over"
+    }
+  ]

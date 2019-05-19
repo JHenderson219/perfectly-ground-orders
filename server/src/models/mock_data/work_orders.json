@@ -1,0 +1,39 @@
+[
+    {
+        "shipDate": "2019-05-17T00:00:00+00:00",
+        "cases": 20,
+        "packets": "25",
+        "notes": "note000",
+        "brewMethodID": "036b794b-7ce0-40ed-aa68-46082a8abba9",
+        "caseTypeID": "db6adf11-9d2a-44a0-8c75-725878742644",
+        "coffeeID": "b55f0a8d-0fe9-4b32-9e6b-9d2fbc520754"
+    },
+    {
+        "shipDate": "2019-05-19T00:00:00+00:00",
+        "cases": "50",
+        "packets": "25",
+        "notes": "note001",
+        "caseTypeID": "db6adf11-9d2a-44a0-8c75-725878742644",
+        "brewMethodID": "9aeadf59-8a73-47d1-81fd-11e057ee2072",
+        "coffeeID": "b55f0a8d-0fe9-4b32-9e6b-9d2fbc520754"
+    },
+    {
+        "shipDate": "2019-05-21T00:00:00+00:00",
+        "cases": 100,
+        "packets": "50",
+        "notes": "note002",
+        "brewMethodID": "c9dc187b-f7ab-4f44-8bd5-d1efd4ed724a",
+        "caseTypeID": "db6adf11-9d2a-44a0-8c75-725878742644",
+        "coffeeID": "b55f0a8d-0fe9-4b32-9e6b-9d2fbc520754"
+    },
+    {
+        "shipDate": "2019-05-23T00:00:00+00:00",
+        "cases": 10,
+        "packets": "50",
+        "notes": "note003",
+        "hasPriority": true,
+        "brewMethodID": "739f377d-8f24-4804-a6e3-68e0efa6c7ff",
+        "caseTypeID": "ae35c101-82e1-4779-b92c-e5dcfbf20606",
+        "coffeeID": "3fc6ca63-d8fd-4b2b-a08f-8264237d4e52"
+    }
+]
