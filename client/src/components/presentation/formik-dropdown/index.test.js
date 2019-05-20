@@ -2,7 +2,7 @@ import { shallow, mount } from 'enzyme';
 import FormikDropdown from './index';
 import MenuItem from '@material-ui/core/MenuItem';
 import React from 'react';
-import { smokeTest } from './../../test-utils'
+import { smokeTest } from './../../___tests___/utils'
 
 const data = [
   {label: 'test1', value: 'test1'}, 

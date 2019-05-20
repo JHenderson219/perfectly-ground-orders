@@ -1,7 +1,7 @@
 import { mount } from 'enzyme';
 import Date from './index';
 import React from 'react';
-import { smokeTest } from './../../test-utils'
+import { smokeTest } from './../../___tests___/utils'
 import dayjs from 'dayjs';
 describe('Date', () => {
   it('renders without crashing', () => {
