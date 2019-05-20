@@ -11,36 +11,7 @@ import CreateOrderForm from '../../presentation/create-order-form';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
 import { Typography } from '@material-ui/core';
-
-
-const dateIsValid = (dateStr) => {
-  const dateRegex = /\d{4}-\d{2}-\d{2}/g;
-  return dateRegex.test(dateStr);
-}
-const validateForm = (values = {}) => {
-  const errors = {};
-  const { shipDate, cases, brewMethodID, coffeeID, caseTypeID, notes } = values; 
-  const MAX_NOTES_LENGTH = 255;
-  if (!shipDate || !dateIsValid(shipDate)) {
-    errors.shipDate = 'Invalid Ship Date';
-  }
-  if (!cases || cases < 1) {
-    errors.cases = 'Invalid number of cases';
-  }
-  if (!brewMethodID) {
-    errors.brewMethodID = "Brew method is required";
-  }
-  if (!coffeeID) {
-    errors.coffeeID = "Coffee type is required";
-  }
-  if (!caseTypeID) {
-    errors.caseTypeID = "Packets per case is required";
-  }
-  if (notes.length > MAX_NOTES_LENGTH) {
-    errors.notes = "Notes must be shorter than 255 characters"
-  }
-  return errors;
-}
+import { validateForm, handleSave } from './utils';
 
 export const CreateWorkOrderDialog = (props) => {
   const { onClose, open, data, handleSave } = props;
