@@ -109,7 +109,7 @@ Notable UI Libraries:
 
 
 ### Architecture Diagrams
-[Diagrams (Hosted at Draw.io)](https://drive.google.com/file/d/1Ba7PWk22Abm7UQzb9lhTJprbdameBYmp/view?usp=sharing)
+[Diagrams](https://drive.google.com/file/d/1fEg3t5-5A9t2SoHJo5285_xKvMc6vNC_/view?usp=sharing)
 
 ## Notable Design Choices
 ### CaseType table
