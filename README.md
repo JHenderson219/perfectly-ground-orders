@@ -87,15 +87,27 @@ If experiencing this issue, try locating where `babel-node` is installed for you
 ### Stack
 #### Back End
 Database: PostgresSQL
+
+
 ORM: [Sequelize](http://docs.sequelizejs.com/)
+
+
 API: Express / [Apollo Server](https://www.apollographql.com/docs/apollo-server/) GraphQL API
+
+
 #### Front End
 Data access / GraphQL Client: [Apollo Client](https://www.apollographql.com/docs/react/) via Apollo Boost
+
+
 UI Framework: React (via Create React App)
+
+
 Notable UI Libraries:
  - Material UI
  - Formik
  - Material UI Datatables
+
+
 ### Architecture Diagrams
 [Diagrams (Hosted at Draw.io)](https://drive.google.com/file/d/1Ba7PWk22Abm7UQzb9lhTJprbdameBYmp/view?usp=sharing)
 
