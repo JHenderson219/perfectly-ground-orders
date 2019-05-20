@@ -8,15 +8,7 @@ import { ApolloProvider, Query } from 'react-apollo';
 import Header from './components/presentation/header';
 import ErrorSnackbar from './components/presentation/error-snackbar';
 const client = new ApolloClient();
-// todo: move client to its own file
-// todo: move query to it's own file
-// todo: striped rows
-// todo: better loading thing for Table Section
-// todo: better loading placeholder for table
-// todo: style format ship date with a better star icon
 
-
-// todo: tests for front-end
 class App extends React.Component {
   state = {
     isModalOpen: false,
