@@ -11,7 +11,7 @@ describe('Date', () => {
     const wrapper = mount(<Date />);
     const month = dayjs().format('MMM');
     const day = dayjs().format('D');
-    // expect(wrapper).toContain(month);
-    // expect(wrapper).toContain(day);
+    expect(wrapper.contains(month)).toBe(true);
+    expect(wrapper.contains(day)).toBe(true);
   })
 })

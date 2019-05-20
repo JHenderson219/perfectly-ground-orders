@@ -1,5 +1,5 @@
 import gql from 'graphql-tag';
-
+// idea: block comment to explain what this is
 export default gql`
 scalar Date
 
@@ -13,7 +13,7 @@ type WorkOrder {
     packets: Int!
     notes: String,
     hasPriority: Boolean!,
-    number: Int!
+    orderNumber: Int!
 }
 
 type BrewMethod {

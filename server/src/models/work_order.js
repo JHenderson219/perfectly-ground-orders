@@ -32,7 +32,7 @@ const workOrder = (sequelize, DataTypes) => {
       defaultValue: false,
       allowNull: false,
     },
-    number: {
+    orderNumber: {
       type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true

@@ -5,21 +5,25 @@ import get from 'lodash.get';
 import { TextField } from 'formik-material-ui';
 
 const FormikDropdown = (props) => {
-  const { name, label, initial, required } = props;
+  const { name, label, initial = {}, required } = props;
   const data = get(props, "data", []);
-  const initialVal = initial[name];
+  const initialVal = get(initial, name, '');
   const isRequired = required ? true : null;
   return (
-    <Field type="text" required={isRequired} name={name} label={label} select component={TextField}
-      fullWidth value={initialVal}
+    <Field type="text" required={isRequired} name={name} label={label} select 
+    component={TextField} fullWidth value={initialVal}
       InputLabelProps={{
         shrink: true,
       }}
     >
-      {data.map(option => {
+      {data.map((option = {}) => {
+        const { value, label } = option;
+        if (!value || !label) {
+          return null;
+        }
         return (
-          <MenuItem key={option.value} value={option.value}>
-            {option.label}
+          <MenuItem key={value} value={value}>
+            {label}
           </MenuItem>
         )
       })}

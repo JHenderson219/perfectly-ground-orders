@@ -53,7 +53,7 @@ const ORDERS = gql`
       notes
       hasPriority
       shipDate
-      number
+      orderNumber
       brewMethod {
         id
         name

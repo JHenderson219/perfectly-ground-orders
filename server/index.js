@@ -1,4 +1,3 @@
-require('dotenv').config();
 import express from 'express';
 import { ApolloServer, gql } from 'apollo-server-express';
 import schema from './src/graphql/schema';
@@ -6,13 +5,13 @@ import resolvers from './src/resolvers';
 import { json, urlencoded } from 'body-parser';
 import models, { sequelize } from './src/models';
 import seedData from './src/models/seed_data';
+const configResult = require('dotenv').config();
+
 // todo: move this file to src folder
 // todo: try-catch resolver await calls - how do this?
 // todo: sanitize inputs on mutation
 // todo: tests for back-end
-// todo: fix env vars
 // todo: figure out build / deploy
-// todo: figure out env files / variables
 // todo: figure out scripts and that babel bug
 // todo: diagram the system
 // todo: readme with good instructions and detail

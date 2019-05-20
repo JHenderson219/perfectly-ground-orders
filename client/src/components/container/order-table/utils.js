@@ -11,7 +11,7 @@ export const formatShipDate = (props) => {
   return `${formattedDate} *`;
 }
 export const formatOrderData = (order) => {
-  const { cases, caseType, shipDate, number, coffee, brewMethod, hasPriority } = order;
+  const { cases, caseType, shipDate, orderNumber, coffee, brewMethod, hasPriority } = order;
   const packets = get(caseType, 'capacity', null);
   const coffeeName = coffee.name;
   const brewMethodName = brewMethod.name;
@@ -21,7 +21,7 @@ export const formatOrderData = (order) => {
     cases,
     packets,
     shipDate: formatShipDate({date: shipDate, hasPriority}),
-    order: number
+    orderNumber: orderNumber
   };
 }
 
