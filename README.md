@@ -7,12 +7,17 @@
 #### Install and setup NodeJS
 Install Links:
 [Windows & Mac](https://nodejs.org/en/download/)
+
 #### Install your package manager of choice
 [Yarn](https://yarnpkg.com/en/docs/install)
+
+
 [NPM](https://www.npmjs.com/get-npm)
  #### Fork the repo / download code
  If you have any issues getting the code, please contact me immediately and I will get them resolved:
  hendersonj219@gmail.com
+
+
  805.305.9903
 #### Install nodemon globally
 [Nodemon](https://www.npmjs.com/package/nodemon)
@@ -21,6 +26,8 @@ Install Links:
 #### Install and setup PostgreSQL
 Install links:
 [Windows](https://www.postgresql.org/download/windows/)
+
+
 [Mac](https://www.postgresql.org/download/macosx/)
  #### Write a .env file
  From the project root:
@@ -48,12 +55,16 @@ If the server fails to start with the .env file, try replacing the environment v
 #### Install dependencies: 
 From the project root:
 `npm setup`
+
+
 `yarn setup`
 This should install dependencies in the project root, `/server`, and `/client` sub-directories, then navigate back to the project root where you will be able to launch the app.
 
 If this command fails, you can install dependencies manually by running the install command in the root, then navigating to each directory and running the install command on each sub-directory in turn.
 #### Launch the app
 `npm dev`
+
+
 `yarn dev`
 
 This should use `concurrently` to spin up the database, start the api, and then launch the client-side app.
