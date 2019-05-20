@@ -113,4 +113,4 @@ The client code is essentially ready to be built and deployed to production. Cre
 The server code requires one step to be completed before it is ready for production. Webpack must be installed and configured to transpile and package our server code. This should be a relatively trivial step. Then, our server code will be ready to deploy.
 
 ### Deployment
-This application has been designed as a monolith, so deploying it as such would be a reasonable step. To ease devops burden, it would be advisable to leverage a continuous integration service to automatically manage deployments.
+This application has been designed as a monolith, so deploying it as such would be a reasonable step. To ease devops burden, it would be advisable to leverage a continuous integration service to automatically manage deployments. Any popular hosting service would be sufficient to host the deployed application.
