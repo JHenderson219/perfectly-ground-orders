@@ -33,7 +33,7 @@ It should look like:
     DB_USER=YOUR_SERVER_SUPERUSER_HERE
     DB_PASS=YOUR_SUPERUSER_PASSWORD_HERE
 
-If the server fails to start with the .env file, try replacing the environment variables on lines 4-6 of `./server/models/index.js` with the same values, so:
+If the server fails to start with the .env file, try replacing the environment variables on lines 4-6 of `./server/models/index.js` with the literal values, so:
 
     export  const  sequelize  =  new  Sequelize(
 	    YOUR_SERVER_HOST_NAME_HERE,
@@ -60,6 +60,10 @@ This should use `concurrently` to spin up the database, start the api, and then 
 
 The app should now be available on `http:\\localhost:3000`
 
+#### Running tests
+`cd /client && yarn test` (or `npm test`)
+`cd /server && yarn test` (or `npm test`)
+
 #### Possible known issues
 During development, my local machine was having issues with running `babel-node` as a global command line function. This utility is being used in the `server` command (in the root `package.json`) to transpile the server code to ES5 on the fly.
 
@@ -75,7 +79,7 @@ Database: PostgresSQL
 ORM: [Sequelize](http://docs.sequelizejs.com/)
 API: Express / [Apollo Server](https://www.apollographql.com/docs/apollo-server/) GraphQL API
 #### Front End
-Data access / GraphQL Client: [Apollo Client](https://www.apollographql.com/docs/react/)
+Data access / GraphQL Client: [Apollo Client](https://www.apollographql.com/docs/react/) via Apollo Boost
 UI Framework: React (via Create React App)
 Notable UI Libraries:
  - Material UI
@@ -91,9 +95,16 @@ In implementing the restriction of case sizes to only 25 or 50 packets for each 
 I reason that the size of these 25 or 50-packet boxes are dictated by the size of actual boxes in the real world. It is not unreasonable that we might want to expand the capabilities of this system later by increasing the variety of box sizes, possibly without needing a developer to be involved to update an `enum`. 
 
 With `CaseTypes` as its own table, it would be a relatively easy matter to implement a feature to add / remove `CaseTypes` to account for differently sized boxes.
+
+### GraphQL
+A reasonable question might be: Why GraphQL? There were several reasons for this choice. 
+
+First, Apollo is an incredibly powerful front-end state management and data access solution. It provides all of the benefits of Redux, while adding in auto-normalized data access to our server via a GraphQL client. It reduces client-side code, which reduces testing burden and the possibility of bugs. It also drastically speeds front-end development time by making it significantly easier to get the data one needs.
+
+Second, GraphQL excels when dealing with hierarchical data. This application had several instances of needing such data at different points. Using GraphQL meant that accessing this data in exactly the form needed was trivial.
 ## Deployment / Production Readiness
 
-In general, this app is very close to being ready for production use. The client and server code are at slightly different levels of readiness.
+In general, this app is nearly ready for production use. The client and server code are at slightly different levels of readiness.
 
 ### Client
 The client code is essentially ready to be built and deployed to production. Create React App defaults should be sufficient for building the application.
