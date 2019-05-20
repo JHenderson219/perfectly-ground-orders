@@ -14,12 +14,19 @@
     "sequelize": "^5.8.6"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-jest": "^24.8.0",
     "babel-loader": "8.0.5",
     "babel-preset-env": "^1.7.0",
     "concurrently": "^4.0.1",
+    "jest": "^24.8.0",
     "nodemon": "^1.19.0",
     "react-test-renderer": "^16.8.6"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }
