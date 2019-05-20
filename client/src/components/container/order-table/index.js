@@ -3,6 +3,7 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import MUIDataTable from "mui-datatables";
 import { formatOrderData, sortTableByShipDate } from './utils';
+import get from 'lodash.get';
 const columns = [
   {name: "coffee", label: "Coffee"}, 
   {name: "brewMethod", label: "Method"}, 
@@ -11,8 +12,11 @@ const columns = [
   {name:"shipDate", label: "Ship Date", options: {sortDirection: 'asc'}},
   {name: "order", label:"Order"}
 ];
-export const OrdersTable = (props) => {
+export const OrdersTable = (props = {}) => {
   const { result } = props;
+  if (!result) {
+    return null;
+  }
   const { loading, error, data } = result;
   if (loading) {
     return 'Loading orders...';
@@ -20,7 +24,11 @@ export const OrdersTable = (props) => {
   if (error) {
     return `Error! ${error}`
   }
-  const tableData = data.workOrders.map(order => {
+  if (!data) {
+    return null
+  }
+  const workOrders = get(data, "workOrders", []);
+  const tableData = workOrders.map(order => {
     return formatOrderData(order);
   })
   const options = {
