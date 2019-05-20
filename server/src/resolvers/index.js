@@ -1,14 +1,4 @@
 
-const fetchData = (fetchFunc) => {
-  let out;
-  try {
-    out = await fetchFunc();
-  } catch (err) {
-    data
-  }
-  return data
-}
-
 const resolvers = {
   WorkOrder: {
     brewMethod: async (parent, args, context, info) => {
