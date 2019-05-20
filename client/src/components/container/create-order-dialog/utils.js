@@ -26,8 +26,5 @@ export const validateForm = (values = {}) => {
   if (!caseTypeID || !isUUID(caseTypeID)) {
     errors.caseTypeID = "Packets per case is required";
   }
-  if (notes.length > MAX_NOTES_LENGTH) {
-    errors.notes = "Notes must be shorter than 255 characters"
-  }
   return errors;
 }
