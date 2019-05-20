@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import get from 'lodash.get';
 
-export const formatShipDate = (props) => {
+export const formatShipDate = (props = {}) => {
   const { hasPriority, date } = props;
   const formattedDate = dayjs(date).format('MM/DD/YYYY')
   if (!hasPriority) {
@@ -11,21 +11,29 @@ export const formatShipDate = (props) => {
   return `${formattedDate} *`;
 }
 export const formatOrderData = (order) => {
-  const { cases, caseType, shipDate, orderNumber, coffee, brewMethod, hasPriority } = order;
+  const { 
+    cases, 
+    caseType, 
+    shipDate, 
+    orderNumber,
+    coffee, 
+    brewMethod, 
+    hasPriority 
+  } = order;
   const packets = get(caseType, 'capacity', null);
-  const coffeeName = coffee.name;
-  const brewMethodName = brewMethod.name;
+  const coffeeName = get(coffee, 'name', '');
+  const brewMethodName = get(brewMethod, 'name', '');
   return {
     coffee: coffeeName,
     brewMethod: brewMethodName,
     cases,
     packets,
     shipDate: formatShipDate({date: shipDate, hasPriority}),
-    orderNumber: orderNumber
+    orderNumber
   };
 }
 
-export const sortTableByShipDate = (tableData) => {
+export const sortTableByShipDate = (tableData = []) => {
   const SHIP_DATE_INDEX = 4;
   
   return tableData.sort((a,b) => {
