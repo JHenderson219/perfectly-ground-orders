@@ -114,9 +114,9 @@ Data access / GraphQL Client: [Apollo Client](https://www.apollographql.com/docs
 UI Framework: React (via Create React App)
 
 Notable UI Libraries:
- - Material UI
- - Formik
- - Material UI Datatables
+ - [Material UI](https://material-ui.com/)
+ - [Formik](https://jaredpalmer.com/formik/)
+ - [Material UI Datatables](https://github.com/gregnb/mui-datatables)
 
 ### High Level Architecture Diagrams
 [Diagrams](https://drive.google.com/file/d/1fEg3t5-5A9t2SoHJo5285_xKvMc6vNC_/view?usp=sharing)
@@ -138,6 +138,7 @@ Notable UI Libraries:
 ### GraphQL / Apollo
  1. Front-end state management via Apollo - all the benefits of redux, and normalizer while reducing front-end code
  2. GraphQL is excellent for dealing with hierarchical data, which was a concern for this application
+ 3. Single source of truth for both local application state and remote data states
 
 ### React
  1. Excels at displaying data on the page using a one-way data binding, which was a great fit for this application
