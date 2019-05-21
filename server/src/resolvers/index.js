@@ -16,7 +16,7 @@ const resolvers = {
     },
     caseType: async (parent, args, { models }, info) => {
       const model = models.caseType;
-      const data = await getOneByID(model, parent.get('caseTypeID'))
+      const data = await getOneByID(model, parent.get('caseTypeID'));
       return data;
     },
   },
