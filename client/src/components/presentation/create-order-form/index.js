@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
-import { TextField, Checkbox } from 'formik-material-ui';
+import { TextField } from 'formik-material-ui';
 import {  Button } from '@material-ui/core';
 import { CoffeeAndMethodRow,
         ShipDate, 

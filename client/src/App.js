@@ -84,7 +84,6 @@ const ORDERS = gql`
   }
 `
 const TableSectionWrapper = (props) => {
-  const { isModalOpen, toggleModal, onError } = props;
   return (
     <Query query={ORDERS}>
       {(result) => {
