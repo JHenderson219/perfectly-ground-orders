@@ -41,14 +41,12 @@ const resolvers = {
   Mutation: {
     createWorkOrder: async (_, args, context, info) => {
       const { models } = context;
-      console.log('before sanitize', args.notes);
       if (args.notes) {
         args.notes = sanitizeHtml(args.notes, {
           allowedTags: [],
           allowedAttributes: {}
         });
       }
-      console.log('after sanitize', args.notes);
       const { workOrder } = models;
       const saved = await workOrder.create(args);
       return saved;
