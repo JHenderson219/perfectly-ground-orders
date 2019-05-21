@@ -49,7 +49,7 @@ const CreateOrderForm = (props) => {
             <div style={style.formRow}>
               <Field label="Notes" name="notes" type="text" component={TextField} fullWidth />
             </div>
-            <PriorityCheckboxRow />
+            <PriorityCheckboxRow {...mergedProps} />
             <Button variant="contained" type="submit" color="primary" disabled={isSubmitting}>
               Create Work Order
             </Button>

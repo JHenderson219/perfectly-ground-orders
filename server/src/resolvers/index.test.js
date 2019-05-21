@@ -17,10 +17,3 @@ test('resolvers dont crash', () => {
     })
   })
 })
-
-// test('resolvers call the appropriate models', () => {
-//   forEachEntry(resolvers, (resolver, key) => {
-//     forEachEntry(resolver, (func, funcName) => {
-//     })
-//   })
-// })
