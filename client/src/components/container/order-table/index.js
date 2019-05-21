@@ -40,7 +40,6 @@ export const OrdersTable = (props = {}) => {
     rowsPerPageOptions: [10, 25, 50],
     sort: false,
   }
-  console.log(tableData)
   return (
     <MUIDataTable options={options} columns={columns} title={"ORDERS"} 
       data={tableData} />
