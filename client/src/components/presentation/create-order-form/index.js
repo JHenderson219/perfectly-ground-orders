@@ -1,6 +1,6 @@
 import React from 'react';
 import FormikDropdown from '../../presentation/formik-dropdown';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import { TextField, Checkbox } from 'formik-material-ui';
 import { FormControlLabel, Button } from '@material-ui/core';
 
@@ -20,7 +20,6 @@ const ShipDate = (props = {}) => {
 
 const CoffeeAndMethod = (props = {}) => {
   const { style, initial, coffees, brewMethods } = props;
-  console.log(props)
   return (
     <div style={style.formRow}>
       <div style={style.formColumn}>

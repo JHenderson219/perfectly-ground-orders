@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
 import ApolloClient, { gql } from 'apollo-boost';
 import CreateOrderDialog from './components/container/create-order-dialog';
 import Table from './components/container/order-table';

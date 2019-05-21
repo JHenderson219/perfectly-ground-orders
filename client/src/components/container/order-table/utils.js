@@ -10,6 +10,20 @@ export const formatShipDate = (props = {}) => {
   
   return `${formattedDate} *`;
 }
+
+export const sortTableByShipDate = (tableData = []) => {
+  const SHIP_DATE_INDEX = 4;
+  
+  return tableData.sort((a,b) => {
+    const aDate = dayjs(a.data[SHIP_DATE_INDEX]);
+    const bDate = dayjs(b.data[SHIP_DATE_INDEX]);
+    if (aDate.isBefore(bDate)) {
+      return -1;
+    }
+    return 1;
+  })
+}
+
 export const formatOrderData = (order) => {
   const { 
     cases, 
@@ -33,15 +47,9 @@ export const formatOrderData = (order) => {
   };
 }
 
-export const sortTableByShipDate = (tableData = []) => {
-  const SHIP_DATE_INDEX = 4;
-  
-  return tableData.sort((a,b) => {
-    const aDate = dayjs(a.data[SHIP_DATE_INDEX]);
-    const bDate = dayjs(b.data[SHIP_DATE_INDEX]);
-    if (aDate.isBefore(bDate)) {
-      return -1;
-    }
-    return 1;
+export const formatTableData = (data) => {
+  const workOrders = get(data, "workOrders", []);
+  return workOrders.map(order => {
+    return formatOrderData(order);
   })
 }
