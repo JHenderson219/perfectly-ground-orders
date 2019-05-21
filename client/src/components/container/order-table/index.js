@@ -9,7 +9,7 @@ const columns = [
   {name: "cases", label:"Number of Cases"}, 
   {name: "packets", label:"Packets per Case"},
   {name:"shipDate", label: "Ship Date", options: {sortDirection: 'asc'}},
-  {name: "order", label:"Order"}
+  {name: "orderNumber", label:"Order"}
 ];
 export const OrdersTable = (props = {}) => {
   const { result } = props;
@@ -40,6 +40,7 @@ export const OrdersTable = (props = {}) => {
     rowsPerPageOptions: [10, 25, 50],
     sort: false,
   }
+  console.log(tableData)
   return (
     <MUIDataTable options={options} columns={columns} title={"ORDERS"} 
       data={tableData} />
