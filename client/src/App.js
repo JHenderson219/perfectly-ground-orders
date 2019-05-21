@@ -89,12 +89,7 @@ const TableSectionWrapper = (props) => {
     <Query query={ORDERS}>
       {(result) => {
         return (
-        <TableSection 
-        isModalOpen={isModalOpen} 
-        toggleModal={toggleModal} 
-        result={result} 
-        onError={onError}
-        />)
+        <TableSection result={result} {...props} />)
       }}
     </Query>
   )
@@ -117,12 +112,8 @@ const TableSection = (props) => {
   return (
     <div>
       <Table />
-      <CreateOrderDialog 
-      data={data} 
-      open={isModalOpen} 
-      onClose={toggleModal} 
-      onSave={onSave} 
-      onError={onError}/>
+      <CreateOrderDialog data={data} open={isModalOpen} onClose={toggleModal} 
+      onSave={onSave} onError={onError}/>
     </div>
   )
 }
