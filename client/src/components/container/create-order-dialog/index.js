@@ -9,7 +9,7 @@ import CreateOrderForm from '../../presentation/create-order-form';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
 import { Typography } from '@material-ui/core';
-import { validateForm, formatData } from './utils';
+import { validateForm, formatData, handleSave } from './utils';
 
 export const CreateWorkOrderDialog = (props) => {
   const { onClose, open, data, handleSave } = props;
@@ -64,21 +64,12 @@ const CREATE_WORK_ORDER = gql`
 `;
 const CreateWorkOrderWrapper = (props) => {
   const { open, onClose, data, onSave, onError } = props;
-  const handleSave = (createWorkOrder, results) => async (variables, formMethods) => {
-    try {
-      await createWorkOrder({ variables });
-      onSave();
-    } catch (error) {
-      console.error('caught error', error);
-      onError(error);
-    }
-  }
   return (
     <Mutation mutation={CREATE_WORK_ORDER} >
-      {(createWorkOrder, results) => {
+      {(createWorkOrder) => {
         return (
           <CreateWorkOrderDialog data={data} onClose={onClose} open={open}
-            handleSave={handleSave(createWorkOrder, results)} />
+            handleSave={handleSave(createWorkOrder, onSave, onError)} />
         )
       }}
     </Mutation>

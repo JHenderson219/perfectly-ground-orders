@@ -46,3 +46,12 @@ export const formatData = (data) => {
     caseTypes
   }
 }
+
+export const handleSave = (action, onSave, onError) => async (variables) => {
+  try {
+    await action({ variables });
+    onSave();
+  } catch (error) {
+    onError(error);
+  }
+}
