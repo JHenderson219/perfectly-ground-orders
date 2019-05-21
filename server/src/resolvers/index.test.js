@@ -6,6 +6,7 @@ const forEachEntry = (object, callback) => {
   })
 }
 
+
 test('resolvers exist', () => {
   expect(resolvers).not.toBeNull();
 })

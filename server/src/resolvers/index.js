@@ -1,7 +1,10 @@
+import sanitizeHtml from 'sanitize-html';
 
 const resolvers = {
   WorkOrder: {
     brewMethod: async (parent, args, context, info) => {
+      // no need to try-catch these awaits
+      // Apollo Server handles errors thrown from resolvers
       const data = await context.models.brewMethod.findOne({
         where: {
           id: parent.get('brewMethodID'),
@@ -38,6 +41,14 @@ const resolvers = {
   Mutation: {
     createWorkOrder: async (_, args, context, info) => {
       const { models } = context;
+      console.log('before sanitize', args.notes);
+      if (args.notes) {
+        args.notes = sanitizeHtml(args.notes, {
+          allowedTags: [],
+          allowedAttributes: {}
+        });
+      }
+      console.log('after sanitize', args.notes);
       const { workOrder } = models;
       const saved = await workOrder.create(args);
       return saved;
