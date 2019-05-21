@@ -1,31 +1,22 @@
-import sanitizeHtml from 'sanitize-html';
+import { sanitizeCreateWorkOrder, getOneByID } from './utils';
 
 const resolvers = {
   WorkOrder: {
-    brewMethod: async (parent, args, context, info) => {
+    brewMethod: async (parent, args, { models }, info) => {
       // no need to try-catch these awaits
-      // Apollo Server handles errors thrown from resolvers
-      const data = await context.models.brewMethod.findOne({
-        where: {
-          id: parent.get('brewMethodID'),
-        }
-      });
+      // Apollo Server handles errors thrown from resolversc
+      const model = models.brewMethod;
+      const data = await getOneByID(model, parent.get('brewMethodID'));
       return data;
     },
-    coffee: async (parent, args, context, info) => {
-      const data = await context.models.coffee.findOne({
-        where: {
-          id: parent.get('coffeeID'),
-        }
-      });
+    coffee: async (parent, args, { models }, info) => {
+      const model = models.coffee;
+      const data = await getOneByID(model, parent.get('coffeeID'));
       return data
     },
-    caseType: async (parent, args, context, info) => {
-      const data = await context.models.caseType.findOne({
-        where: {
-          id: parent.get('caseTypeID'),
-        }
-      });
+    caseType: async (parent, args, { models }, info) => {
+      const model = models.caseType;
+      const data = await getOneByID(model, parent.get('caseTypeID'))
       return data;
     },
   },
@@ -34,21 +25,17 @@ const resolvers = {
       const data = await models.workOrder.findAll();
       return data;
     },
-    brewMethods: (parent, args, { models }, info) => models.brewMethod.findAll(),
+    brewMethods: async (parent, args, { models }, info) => {
+      return models.brewMethod.findAll()
+    },
     coffees: (parent, args, { models }, info) => models.coffee.findAll(),
     caseTypes: (parent, args, { models }, info) => models.caseType.findAll(),
   },
   Mutation: {
-    createWorkOrder: async (_, args, context, info) => {
-      const { models } = context;
-      if (args.notes) {
-        args.notes = sanitizeHtml(args.notes, {
-          allowedTags: [],
-          allowedAttributes: {}
-        });
-      }
+    createWorkOrder: async (_, args, { models }, info) => {
       const { workOrder } = models;
-      const saved = await workOrder.create(args);
+      const sanitized = sanitizeCreateWorkOrder(args);
+      const saved = await workOrder.create(sanitized);
       return saved;
     }
   }
